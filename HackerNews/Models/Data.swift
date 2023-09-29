@@ -1,8 +1,18 @@
-//
-//  Data.swift
-//  HackerNews
-//
-//  Created by Cyril Kardash on 04.09.2023.
-//
-
 import Foundation
+
+struct Data: Codable {
+    let hits: [Post]
+}
+
+struct Post: Codable, Identifiable {
+    var id: String {
+        return objectID
+    }
+    let objectID: String
+    let title: String
+    let url: String?
+    let points: Int
+}
+
+
+
